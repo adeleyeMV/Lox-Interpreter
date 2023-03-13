@@ -117,6 +117,7 @@ class Return:
     
 @dataclass
 class Break:
+    keyword: Token
     loop_depth: Optional[Expr]
     def accept(self, visitor: "StmtVisitor"):
         return visitor.visit_break(self)
