@@ -108,10 +108,11 @@ class Parser:
 
     def break_statement(self):
         # print(self.loop_depth)
+        keyword = self.previous()
         if self.loop_depth == 0:
             self.error(TokenType.BREAK, "Must be inside loop")
         self.consume(TokenType.SEMICOLON, "Expect ';' after break.")
-        return Break(self.loop_depth)
+        return Break(keyword, self.loop_depth)
     
     def if_statement(self):
         self.consume(TokenType.LEFT_PAREN, "Expect '(' after 'if'")
@@ -307,7 +308,7 @@ class Parser:
         elif self.match(TokenType.THIS):
             return This(self.previous())
         elif self.match(TokenType.BREAK):
-            return Break(self.loop_depth)
+            return Break(self.previous(), self.loop_depth)
         elif self.match(TokenType.SUPER):
             keyword = self.previous()
             self.consume(TokenType.DOT, "Expect '.' after 'super'")
