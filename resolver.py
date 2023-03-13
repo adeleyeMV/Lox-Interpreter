@@ -123,7 +123,10 @@ class Resolver(StmtVisitor[None], ExprVisitor[None]):
             self.resolve_expr(stmt.value)
             
     def visit_break(self, stmt: Break) -> None:
-        pass
+        if stmt.loop_depth == 0:
+            add_error(stmt.keyword, "Break statement must be inside loop!")
+        else:
+            pass
 
     def visit_while(self, stmt: While) -> None:
         self.resolve_expr(stmt.condition)
