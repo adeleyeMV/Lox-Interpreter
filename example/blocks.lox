@@ -1,0 +1,11 @@
+var outside = "oh, no, it does not ";
+
+{
+  var outside = "this ";
+  {
+    var inside = "works";
+
+    print outside + inside;
+  }
+}
+

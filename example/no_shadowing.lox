@@ -1,0 +1,16 @@
+fun f() {
+  // Should not work
+  var i = 0;
+
+  fun g() {
+    i = i + 1;
+    print i;
+  }
+
+  var i = 10;
+  return g;
+}
+
+var callMe = f();
+callMe();
+callMe();

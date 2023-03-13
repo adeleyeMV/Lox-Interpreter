@@ -1,0 +1,6 @@
+fun sum(a, b) {
+    return a + b;
+}
+
+var b = 15;
+print sum(10, b);

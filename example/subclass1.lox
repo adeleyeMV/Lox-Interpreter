@@ -1,0 +1,31 @@
+class Animal {
+  talk() {
+    print "Generic animal talk";
+  }
+}
+
+class Dog < Animal {
+  talk() {
+    print "Bark";
+  }
+}
+
+class Duck < Animal {
+}
+
+class Squirrel < Animal {
+  talk() {
+    super.talk();
+    print "Not that generic, this is a squirrel";
+  }
+}
+
+var d1 = Dog();
+d1.talk();
+
+var d2 = Duck();
+d2.talk();
+
+var sq = Squirrel();
+sq.talk();
+

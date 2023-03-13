@@ -1,0 +1,9 @@
+fun showIf(cond, value) {
+  if (cond)
+    print value;
+}
+
+for (var i = 0; i < 10; i = i + 1) {
+  showIf(i > 2 and i <= 5, i);
+}
+

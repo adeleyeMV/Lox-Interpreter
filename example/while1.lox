@@ -1,0 +1,12 @@
+var i = 0;
+var x = 0;
+var n = 10;
+
+while (i <= n) {
+  x = x + i;
+  i = i + 1;
+}
+
+print "Sum is: ";
+print x;
+

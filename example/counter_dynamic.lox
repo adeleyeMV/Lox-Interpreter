@@ -1,0 +1,21 @@
+fun makeCounter() {
+  var i = 0;
+
+  fun count() {
+    i = i + 1;
+    print i;
+  }
+
+  return count;
+}
+
+fun call(func) {
+  var i = 10;
+  func();
+  func();
+  print i;
+}
+
+var counter = makeCounter();
+call(counter);
+
